@@ -8,7 +8,8 @@ namespace utils {
     // уровни логгирования
     enum class LEVELS {
         RELEASE,
-        DEBUG
+        DEBUG,
+        INFO
     };
 
     // оператор для вывода уровня логирования
@@ -19,6 +20,9 @@ namespace utils {
             break;
         case LEVELS::DEBUG:
             out << "DEBUG";
+            break;
+        case LEVELS::INFO:
+            out << "INFO";
             break;
         default:
             out << "ERROR";
@@ -61,14 +65,6 @@ namespace utils {
                     << "[" << m_level << "]"
                     << " " << logText << std::endl;
 
-            }
-
-            // при уровне RELEASE логи записываются только в файл
-            if (m_level == LEVELS::RELEASE)
-            {
-                m_out << "[" << currentTimeStr << "]"
-                    << "[" << m_level << "]"
-                    << " " << logText << std::endl;
             }
         }
 

@@ -4,10 +4,11 @@
 int main() {
     setlocale(LC_ALL, "rus");
     utils::logger::setFile("example.txt");
-    utils::logger::setLevel(utils::LEVELS::RELEASE);
-    utils::logger::write("этого примера не будет в консоли");
+    utils::logger::write("этот пример не отобразится");
     utils::logger::setLevel(utils::LEVELS::DEBUG);
-    utils::logger::write("пример");
+    utils::logger::write("пример1");
+    utils::logger::setLevel(utils::LEVELS::INFO);
+    utils::logger::write("пример2");
 
     return 0;
 }
